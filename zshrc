@@ -47,4 +47,5 @@ env-setup() {
     git clone --recursive https://github.com/zrts/vim.git ~/.vim
     mkdir -p ~/.vim/{bkp,sessions,swp}
     ln -s ~/.vim/vimrc ~/.vimrc
+    source ~/.zshrc
 }
