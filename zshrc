@@ -36,12 +36,13 @@ alias cdg="cd ${USER_GIT_ROOT}"
 alias g="git"
 alias pa="php artisan"
 alias ptpb="curl https://ptpb.pw -F c=@-"
-alias s="source ~/.zshrc"
+alias s="source"
+alias sz="source ~/.zshrc"
 alias vi="vim"
 
 [ -f ~/.localrc ] && source ~/.localrc
 
-env-setup() {
+env_setup() {
     [ -d ~/.oh-my-zsh ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     [ -d ~/.vim ] && rm -r ~/.vim
     git clone --recursive https://github.com/zrts/vim.git ~/.vim
