@@ -33,19 +33,19 @@ zle -N zle-keymap-select
 
 alias ..="cd .."
 alias cdg="cd ${USER_GIT_ROOT}"
-alias ptpb="curl https://ptpb.pw -F c=@-"
 alias g="git"
 alias pa="php artisan"
+alias ptpb="curl https://ptpb.pw -F c=@-"
+alias s="source ~/.zshrc"
 alias vi="vim"
 
-[[ -f ~/.localrc ]] && source ~/.localrc
+[ -f ~/.localrc ] && source ~/.localrc
 
 env-setup() {
-    rm -rf ~/{.vim*,.oh-my-zsh}
-    mkdir -p ~/{.vim*,.oh-my-zsh}
-    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    [ -d ~/.oh-my-zsh ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    [ -d ~/.vim ] && rm -r ~/.vim
     git clone --recursive https://github.com/zrts/vim.git ~/.vim
     mkdir -p ~/.vim/{bkp,sessions,swp}
-    ln -s ~/.vim/vimrc ~/.vimrc
+    rm ~/.vimrc && ln -s ~/.vim/vimrc ~/.vimrc
     source ~/.zshrc
 }
