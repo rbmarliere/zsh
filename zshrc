@@ -43,14 +43,8 @@ alias vi="vim"
 [ -f ~/.localrc ] && source ~/.localrc
 
 env_setup() {
-    [ -d ~/.oh-my-zsh ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    if [ -d ~/.vim ]; then
-        [ -d ~/.vim/sessions ] && mv ~/.vim/sessions ~
-        rm -rf ~/.vim
-    fi
-    git clone --recursive https://github.com/rbmarliere/vim.git ~/.vim
-    mkdir -p ~/.vim/{bkp,swp}
-    [ -d ~/sessions ] && mv ~/sessions ~/.vim || mkdir -p ~/.vim/sessions
-    rm ~/.vimrc && ln -s ~/.vim/vimrc ~/.vimrc
+    rm -rf ~/.oh-my-zsh && ln -s ~/git/zsh/oh-my-zsh ~/.oh-my-zsh
+    rm -rf ~/.vim && ln -s ~/git/zsh/vim ~/.vim
+    find ~/git/zsh/dotfiles -name ".*" -not -path ~/git/zsh/dotfiles/.git -exec ln -s {} ~ \;
     source ~/.zshrc
 }
