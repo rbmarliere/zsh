@@ -48,7 +48,7 @@ env_setup() {
         [ -d ~/.vim/sessions ] && mv ~/.vim/sessions ~
         rm -rf ~/.vim
     fi
-    git clone --recursive https://github.com/zrts/vim.git ~/.vim
+    git clone --recursive https://github.com/rbmarliere/vim.git ~/.vim
     mkdir -p ~/.vim/{bkp,swp}
     [ -d ~/sessions ] && mv ~/sessions ~/.vim || mkdir -p ~/.vim/sessions
     rm ~/.vimrc && ln -s ~/.vim/vimrc ~/.vimrc
