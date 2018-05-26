@@ -8,7 +8,7 @@ git clone --recursive https://github.com/zrts/zsh.git ~/git/zsh
 mv ~/.zshrc ~/.zshrc_old
 ln -s ~/git/zsh/zshrc ~/.zshrc
 source ~/.zshrc
-env_setup
+envset
 ```
 
 
