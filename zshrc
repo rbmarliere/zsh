@@ -10,6 +10,7 @@ ENABLE_CORRECTION="true"
 ZSH_THEME="kphoen"
 plugins=(vi-mode git zsh-completions zsh-dircolors-solarized)
 
+unsetopt nomatch
 autoload -U colors && colors
 autoload -U compinit promptinit
 compinit
