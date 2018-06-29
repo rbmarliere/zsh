@@ -17,7 +17,7 @@ compinit
 promptinit
 
 source ${ZSH}/oh-my-zsh.sh
-PROMPT='[%{$fg[green]%}$(date +%T) %{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)]
+PROMPT='[%{$fg_bold[magenta]%}$(date +%T) %{$fg_bold[red]%}%n%{$reset_color%}@%{$fg_bold[yellow]%}%m%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%}$(git_prompt_info)]
 %# '
 
 TPUT_END=$(tput cup 9999 0)
@@ -43,8 +43,7 @@ alias vi="vim"
 
 [ -f ${HOME}/.localrc ] && source ${HOME}/.localrc
 
-envset()
-{
+envset() {
     if [ -d ${HOME}/git/zsh ]; then
         pwd=$(pwd)
         cd ${HOME}/git/zsh
@@ -58,8 +57,7 @@ envset()
     source ${HOME}/.zshrc
 }
 
-t()
-{
+t() {
     SESSIONNAME="main"
     tmux has-session -t $SESSIONNAME &> /dev/null
     [ $? != 0 ] && tmux new-session -s $SESSIONNAME -d
