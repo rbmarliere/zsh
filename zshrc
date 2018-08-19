@@ -50,7 +50,7 @@ envset() {
     fi
     rm -rf ${HOME}/.oh-my-zsh && ln -s ${HOME}/git/zsh/oh-my-zsh ${HOME}/.oh-my-zsh
     rm -rf ${HOME}/.vim && ln -s ${HOME}/git/zsh/vim ${HOME}/.vim
-    find ${HOME}/git/zsh/dotfiles -name ".*" -not -path ${HOME}/git/zsh/dotfiles/.git -exec ln -s {} ${HOME} \;
+    find ${HOME}/git/zsh/dotfiles -maxdepth 1 -name ".*" -not -path ${HOME}/git/zsh/dotfiles/.git -exec ln -s {} ${HOME} \;
     source ${HOME}/.zshrc
 }
 
