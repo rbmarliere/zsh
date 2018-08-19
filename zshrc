@@ -1,13 +1,13 @@
-export PATH=${HOME}/bin:${HOME}/.yarn/bin:${HOME}/.node/bin:${HOME}/.config/composer/vendor/bin:${HOME}/.composer/vendor/bin:/usr/local/bin:${PATH}
+export PATH=${HOME}/bin:${PATH}
 export EDITOR=vim
 export GPG_TTY=$(tty)
-export ZSH=${HOME}/.oh-my-zsh
 export KEYTIMEOUT=1
 export USER_GIT_ROOT=${HOME}/git
 
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
 ZSH_THEME="kphoen"
+
 plugins=(vi-mode git zsh-completions zsh-dircolors-solarized)
 
 unsetopt nomatch
