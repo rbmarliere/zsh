@@ -32,12 +32,9 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-alias ..="cd .."
 alias cdg="cd ${USER_GIT_ROOT}"
 alias g="git"
-alias pa="php artisan"
 alias ptpb="curl https://ptpb.pw -F c=@-"
-alias s="source"
 alias sz="source ${HOME}/.zshrc"
 alias vi="vim"
 
