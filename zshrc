@@ -17,13 +17,13 @@ compinit
 promptinit
 
 source ${ZSH}/oh-my-zsh.sh
-PROMPT='[%{$fg_bold[magenta]%}$(date +%T) %{$fg_bold[red]%}%n%{$reset_color%}@%{$fg_bold[yellow]%}%m%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%}$(git_prompt_info)]
-%# '
 
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg_bold[blue]%}"
+PROMPT='[%{$fg[red]%}$(date +%T) %{$fg_bold[yellow]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)]
+%# '
 TPUT_END=$(tput cup 9999 0)
 PS1="${TPUT_END}${PS1}"
 
-precmd() { RPROMPT="" }
 function zle-line-init zle-keymap-select {
     VIM_PROMPT="%{${fg_bold[yellow]}%} [% NORMAL]%  %{${reset_color}%}"
     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} ${EPS1}"
