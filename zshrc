@@ -7,6 +7,7 @@ export USER_GIT_ROOT=${HOME}/git
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
 ZSH_THEME="kphoen"
+ZSH="${HOME}/.oh-my-zsh"
 
 plugins=(vi-mode git zsh-completions zsh-dircolors-solarized)
 
