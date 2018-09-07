@@ -32,7 +32,7 @@ autoload -U colors && colors
 autoload -U compinit promptinit
 compinit
 promptinit
-fpath=($HOME/.oh-my-zsh/custom/plugins/zsh-completions $fpath)
+fpath=( ${HOME}/git/zsh/zsh-plugins/zsh-completions/src ${HOME}/git/zsh/zsh-plugins/cleos-zsh-completion $fpath )
 # https://github.com/OWDIN/cleos-zsh-completion
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' group-name ''
@@ -58,7 +58,6 @@ envset() {
     rm -rf ${HOME}/.vim && ln -s ${HOME}/git/zsh/vim ${HOME}/.vim
     find ${HOME}/git/zsh/dotfiles -maxdepth 1 -name ".*" -not -path ${HOME}/git/zsh/dotfiles/.git -exec ln -s {} ${HOME} \;
     rm -f ${HOME}/.zcompdump
-    ln -s ../../../zsh-plugins oh-my-zsh/custom/plugins/zsh-completions
     source ${HOME}/.zshrc
 }
 
