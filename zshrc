@@ -11,12 +11,6 @@ ZSH="${HOME}/.oh-my-zsh"
 
 plugins=(vi-mode git zsh-completions zsh-dircolors-solarized)
 
-unsetopt nomatch
-autoload -U colors && colors
-autoload -U compinit promptinit
-compinit
-promptinit
-
 source ${ZSH}/oh-my-zsh.sh
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg_bold[blue]%}"
@@ -32,6 +26,17 @@ function zle-line-init zle-keymap-select {
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+unsetopt nomatch
+autoload -U colors && colors
+autoload -U compinit promptinit
+compinit
+promptinit
+fpath=($HOME/.oh-my-zsh/custom/plugins/zsh-completions $fpath)
+# https://github.com/OWDIN/cleos-zsh-completion
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:manuals' separate-sections true
 
 alias cdg="cd ${USER_GIT_ROOT}"
 alias g="git"
@@ -52,6 +57,8 @@ envset() {
     rm -rf ${HOME}/.oh-my-zsh && ln -s ${HOME}/git/zsh/oh-my-zsh ${HOME}/.oh-my-zsh
     rm -rf ${HOME}/.vim && ln -s ${HOME}/git/zsh/vim ${HOME}/.vim
     find ${HOME}/git/zsh/dotfiles -maxdepth 1 -name ".*" -not -path ${HOME}/git/zsh/dotfiles/.git -exec ln -s {} ${HOME} \;
+    rm -f ${HOME}/.zcompdump
+    ln -s ../../../zsh-plugins oh-my-zsh/custom/plugins/zsh-completions
     source ${HOME}/.zshrc
 }
 
