@@ -13,3 +13,6 @@
 [submodule "zsh-plugins/cleos-zsh-completion"]
 	path = zsh-plugins/cleos-zsh-completion
 	url = https://github.com/OWDIN/cleos-zsh-completion.git
+[submodule "xresources"]
+	path = xresources
+	url = https://github.com/solarized/xresources.git
