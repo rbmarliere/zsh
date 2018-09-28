@@ -28,11 +28,12 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 unsetopt nomatch
+
+fpath=( ${HOME}/git/zsh/zsh-plugins/zsh-completions/src ${HOME}/git/zsh/zsh-plugins/cleos-zsh-completion $fpath )
 autoload -U colors && colors
 autoload -U compinit promptinit
 compinit
 promptinit
-fpath=( ${HOME}/git/zsh/zsh-plugins/zsh-completions/src ${HOME}/git/zsh/zsh-plugins/cleos-zsh-completion $fpath )
 # https://github.com/OWDIN/cleos-zsh-completion
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' group-name ''
