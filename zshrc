@@ -16,13 +16,18 @@ fpath=(
     ${USER_GIT_ROOT}/zsh/zsh-plugins/zsh-completions/src
     "${fpath[@]}"
 )
+plugins=(
+    vi-mode
+    git
+)
 source ${ZSH}/oh-my-zsh.sh
 source ${USER_GIT_ROOT}/zsh/zsh-plugins/zsh-dircolors-solarized/zsh-dircolors-solarized.zsh
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
 ZSH_THEME="kphoen"
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[blue]%}"
-PROMPT='[%{$fg[red]%}$(date +%T) %{$fg[yellow]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:%{$fg[cyan]%}%~%{$reset_color%}$(git_prompt_info)%{${reset_color}%}]
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+PROMPT='[%{$fg[red]%}$(date +%T) %{$fg[yellow]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:%{$fg[cyan]%}%~%{$reset_color%}$(git_prompt_info)]
 %# '
 TPUT_END=$(tput cup 9999 0)
 PS1="${TPUT_END}${PS1}"
@@ -31,7 +36,7 @@ function zle-line-init zle-keymap-select {
     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} ${EPS1}"
     zle reset-prompt
 }
-autoload -U compinit promptinit
+autoload -Uz compinit promptinit
 compinit
 promptinit
 
