@@ -1,15 +1,15 @@
-alias cdg="cd ${USER_GIT_ROOT}"
-alias g="git"
-alias ptpb="curl https://ptpb.pw -F c=@-"
-alias sz="source ${HOME}/.zshrc"
-alias vi="vim"
-
 export PATH=${HOME}/bin:${PATH}
 export EDITOR=vim
 export GPG_TTY=$(tty)
 export KEYTIMEOUT=1
 export USER_GIT_ROOT=${HOME}/git
 export ZSH=${USER_GIT_ROOT}/zsh/oh-my-zsh
+
+alias cdg="cd ${USER_GIT_ROOT}"
+alias g="git"
+alias ptpb="curl https://ptpb.pw -F c=@-"
+alias sz="source ${HOME}/.zshrc"
+alias vi="vim"
 
 fpath=(
     ${USER_GIT_ROOT}/zsh/zsh-plugins/cleos-zsh-completion
